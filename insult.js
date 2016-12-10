@@ -26,7 +26,7 @@ function getInsult(name) {
 
     var message = myArray[Math.floor(Math.random() * myArray.length)];
     if (name) message = name + ', ' + message;
-    return rand;
+    return message;
 }
 
 module.exports = getInsult

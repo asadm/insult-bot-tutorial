@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
+const getInsult = require('./insult');
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -34,7 +35,7 @@ app.post('/webhook/', function (req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+			sendTextMessage(sender, getInsult());
 		}
 	}
 	res.sendStatus(200)
