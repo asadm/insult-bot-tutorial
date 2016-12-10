@@ -16,7 +16,7 @@ You can also skip the whole thing by git cloning this repository, running npm in
 
 ### *Build the server*
 
-1. Install the Heroku toolbelt from here https://toolbelt.heroku.com to launch, stop and monitor instances. Sign up for free at https://www.heroku.com if you don't have an account yet.
+1. You need a publicly accessible server URL. Heroku is a good free place. Install the Heroku toolbelt from here https://toolbelt.heroku.com to launch, stop and monitor instances. Sign up for free at https://www.heroku.com if you don't have an account yet.
 
 2. Install Node from here https://nodejs.org, this will be the server environment. Then open up Terminal or Command Line Prompt and make sure you've got the very most recent version of npm by installing it again:
 
@@ -93,17 +93,19 @@ You can also skip the whole thing by git cloning this repository, running npm in
 
 1. Create or configure a Facebook App or Page here https://developers.facebook.com/apps/
 
-    ![Alt text](/demo/shot1.jpg)
+    ![Alt text](/demo/shot1_1.jpg)
+    ![Alt text](/demo/shot1_2.jpg)
 
 2. In the app go to Messenger tab then click Setup Webhook. Here you will put in the URL of your Heroku server and a token. Make sure to check all the subscription fields.
 
-    ![Alt text](/demo/shot3.jpg)
+    ![Alt text](/demo/shot3_1.jpg)
+    ![Alt text](/demo/shot3_2.jpg)
 
-3. Get a Page Access Token and save this somewhere.
+3. You need a new Facebook page for your bot (or can use an existing one). Get a Page Access Token and save this somewhere. Also subscribe the webhook for your page.
 
     ![Alt text](/demo/shot2.jpg)
 
-4. Go back to Terminal and type in this command to trigger the Facebbook app to send messages. Remember to use the token you requested earlier.
+4. Go back to Terminal and type in this command to trigger the Facebbook app to send messages. Remember to use the token you requested earlier. This should return a JSON success.
 
     ```bash
     curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=PAGE_TOKEN"
